@@ -756,3 +756,81 @@ button:focus-visible {
     outline: 3px solid var(--primary-amber);
     outline-offset: 2px;
 }
+
+/* ===================================
+   Split View Screenshot Layout
+   =================================== */
+.app-screenshot.split-view {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-white);
+    height: auto;
+    /* Allow height to adapt */
+    min-height: 300px;
+    /* Reset fixed height */
+}
+
+.split-header {
+    background-color: var(--primary-amber);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.split-container {
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+    background-color: #fffbeb;
+    /* Light amber bg to match theme */
+    flex: 1;
+}
+
+.split-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.split-label {
+    background-color: var(--brown-warm);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.split-col img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
+    /* Ensure full image is visible */
+    background: white;
+}
+
+/* Specific styling for the badge since parent padding changed */
+.app-screenshot.split-view .screenshot-badge {
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    background: var(--accent-green);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    .split-container {
+        flex-direction: column;
+    }
+}
